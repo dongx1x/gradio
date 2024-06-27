@@ -520,6 +520,9 @@ importers:
       '@gradio/atoms':
         specifier: workspace:^
         version: link:../atoms
+      '@gradio/attestationviewer':
+        specifier: workspace:^
+        version: link:../attestationviewer
       '@gradio/audio':
         specifier: workspace:^
         version: link:../audio
@@ -700,6 +703,34 @@ importers:
       '@gradio/utils':
         specifier: workspace:^
         version: link:../utils
+
+  js/attestationviewer:
+    dependencies:
+      '@gradio/atoms':
+        specifier: workspace:^
+        version: link:../atoms
+      '@gradio/button':
+        specifier: workspace:^
+        version: link:../button
+      '@gradio/client':
+        specifier: workspace:^
+        version: link:../../client/js
+      '@gradio/icons':
+        specifier: workspace:^
+        version: link:../icons
+      '@gradio/statustracker':
+        specifier: workspace:^
+        version: link:../statustracker
+      '@gradio/utils':
+        specifier: workspace:^
+        version: link:../
+      jwt-decode:
+        specifier: ^4.0.0
+        version: 4.0.0
+    devDependencies:
+      '@gradio/preview':
+        specifier: workspace:^
+        version: link:../preview
 
   js/audio:
     dependencies:
@@ -6976,6 +7007,10 @@ packages:
 
   jstransformer@1.0.0:
     resolution: {integrity: sha512-C9YK3Rf8q6VAPDCCU9fnqo3mAfOH6vUGnMcP4AQAYIEpWtfGLpwOTmZ+igtdK5y+VvI2n3CyYSzy4Qh34eq24A==}
+
+  jwt-decode@4.0.0:
+    resolution: {integrity: sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==}
+    engines: {node: '>=18'}
 
   katex@0.16.10:
     resolution: {integrity: sha512-ZiqaC04tp2O5utMsl2TEZTXxa6WSC4yo0fv5ML++D3QZv/vx2Mct0mTlRx3O+uUkjfuAgOkzsCmq5MiUEsDDdA==}
@@ -15558,6 +15593,8 @@ snapshots:
     dependencies:
       is-promise: 2.2.2
       promise: 7.3.1
+
+  jwt-decode@4.0.0: {}
 
   katex@0.16.10:
     dependencies:

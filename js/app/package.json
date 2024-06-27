@@ -27,6 +27,7 @@
 		"@gradio/accordion": "workspace:^",
 		"@gradio/annotatedimage": "workspace:^",
 		"@gradio/atoms": "workspace:^",
+		"@gradio/attestationviewer": "workspace:^",
 		"@gradio/audio": "workspace:^",
 		"@gradio/box": "workspace:^",
 		"@gradio/button": "workspace:^",

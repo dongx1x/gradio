@@ -254,6 +254,7 @@ export interface DependencyTypes {
 export interface Payload {
 	fn_index: number;
 	data: unknown[];
+    attestation?: Attestation;
 	time?: Date;
 	event_data?: unknown;
 	trigger_id?: number | null;
@@ -371,4 +372,9 @@ export interface RenderMessage extends Render {
 	type: "render";
 	endpoint: string;
 	fn_index: number;
+}
+
+export interface Attestation {
+	type: string | null;
+	report: string | null;
 }

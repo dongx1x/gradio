@@ -1,0 +1,27 @@
+{
+	"name": "@gradio/attestationviewer",
+	"version": "0.1.0",
+	"description": "Gradio UI packages",
+	"type": "module",
+	"author": "",
+	"license": "ISC",
+	"private": false,
+	"main_changeset": true,
+	"exports": {
+		".": "./Index.svelte",
+		"./example": "./Example.svelte",
+		"./package.json": "./package.json"
+	},
+	"dependencies": {
+		"@gradio/atoms": "workspace:^",
+		"@gradio/button": "workspace:^",
+		"@gradio/client": "workspace:^",
+		"@gradio/icons": "workspace:^",
+		"@gradio/statustracker": "workspace:^",
+		"@gradio/utils": "workspace:^",
+		"jwt-decode": "^4.0.0"
+	},
+	"devDependencies": {
+		"@gradio/preview": "workspace:^"
+	}
+}

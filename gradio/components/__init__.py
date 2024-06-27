@@ -10,6 +10,7 @@ from gradio.components.base import (
     component,
     get_component_instance,
 )
+from gradio.components.attestation_viewer import AttestationViewer
 from gradio.components.button import Button
 from gradio.components.chatbot import Chatbot
 from gradio.components.checkbox import Checkbox
