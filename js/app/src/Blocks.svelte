@@ -309,11 +309,17 @@
 			}
 
 			function handle_data(message: Payload): void {
-				const { data, fn_index } = message;
+				const { data, fn_index, attestation} = message;
 				if (dep.pending_request && dep.final_event) {
 					dep.pending_request = false;
 					make_prediction(dep.final_event);
 				}
+
+				if (attestation !== undefined && data[0] !== "") {
+					const event = new CustomEvent("attestation", { detail: message });
+					document.dispatchEvent(event);
+				}
+
 				dep.pending_request = false;
 				handle_update(data, fn_index);
 				set_status($loading_status);
