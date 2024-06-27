@@ -213,7 +213,7 @@ export function submit(
 							session_hash
 						}
 					)
-						.then(([output, status_code]: any) => {
+						.then(([output, status_code, attestation]: any) => {
 							const data = output.data;
 							if (status_code == 200) {
 								fire_event({
@@ -227,6 +227,7 @@ export function submit(
 										"output",
 										options.with_null_state
 									),
+									attestation,
 									time: new Date(),
 									event_data,
 									trigger_id

@@ -13,6 +13,7 @@ from gradio_client.documentation import document
 
 from gradio.blocks import Blocks
 from gradio.components import (
+    AttestationViewer,
     Button,
     Chatbot,
     Component,
@@ -81,6 +82,7 @@ class ChatInterface(Blocks):
         fill_height: bool = True,
         delete_cache: tuple[int, int] | None = None,
         show_progress: Literal["full", "minimal", "hidden"] = "minimal",
+        attestation_viewer: bool = True,
     ):
         """
         Parameters:
@@ -311,6 +313,14 @@ class ChatInterface(Blocks):
                 State(self.chatbot.value) if self.chatbot.value else State([])
             )
             self.show_progress = show_progress
+
+            if attestation_viewer:
+                accordion_params = {
+                    "label": "Trusted Execution Environment",
+                    "open": False,
+                }
+                with Accordion(**accordion_params):
+                    AttestationViewer()
             self._setup_events()
             self._setup_api()
 
